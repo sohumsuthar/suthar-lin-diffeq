@@ -1,0 +1,67 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+% Define the fancyhdr style
+\pagestyle{fancy}
+\fancyhf{} % Clear default header and footer
+\rhead{\thepage} % Right-justify the page number in the header
+\lhead{Sohum Suthar} 
+
+\title{\Huge{MATH 2568}\\homework \#1}
+\author{\huge{Sohum Suthar}}
+\date{\huge {01/09/2024}}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+\section*{1.1: Exercise 2} % Unnumbered section with a custom title
+\addcontentsline{toc}{section}{1.1: Exercise 2} % Add entry to table of contents
+
+Let $A$ be the $3\times 4$ matrix
+\[
+A=\left(\begin{array}{rrrr} 2 & -1 & 0 & 1 \\ 3 & 4 & -7 & 10\\
+        6 & -3 & 4 & 2 \end{array}\right).
+\]
+
+\begin{enumerate}
+    \item[(a)] For which $n$ is a row of $A$ a vector in $\RR^n$? % \[n = 4.\]
+    
+    \item[(b)] What is the $2^{nd}$ column of $A$?
+
+    
+    \item[(c)] Let $a_{ij}$ be the entry of $A$ in the $i^{th}$ row and the $j^{th}$ column. What is $a_{23}-a_{31}$?
+
+\end{enumerate}
+
+
+
+
+\sol We have to take its complement and check whether that set is an open set, i.e., if it is a union of open balls.
+
+\begin{enumerate}
+\item[(a)]     
+\[n = 4.\]
+\item[(b)]     
+\[
+    \begin{bmatrix}
+        -1 \\
+        4 \\
+        -3
+    \end{bmatrix}
+    \]
+ 
+\item[(c)] 
+    \[
+    a_{23}-a_{31} = -13.
+    \]
+\end{enumerate}
+
+\end{document}
