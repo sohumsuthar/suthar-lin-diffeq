@@ -1,0 +1,283 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
+
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#2}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#1}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {01/20/2024}}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+
+
+
+
+\section*{2.3: Exercise 1} 
+\addcontentsline{toc}{section}{2.3: Exercise 1} 
+
+In Exercise 1 determine
+whether the given matrix is in reduced echelon form.
+
+\begin{enumerate}
+    \item[(1)] 
+    \[
+    \left(\begin{array}{rrrr} 1 & -1 & 0 & 1 \\0 &  1 &  0 &  -6\\ 0 & 0 & 1 & 0 \end{array}\right)
+\]
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(1)]     
+
+
+%SOL HERE
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\section*{2.3: Exercise 8} 
+\addcontentsline{toc}{section}{2.3: Exercise 8} 
+
+\begin{enumerate}
+    \item[(a)] Consider the $2\times 2$ matrix
+    \[ 
+    \left(\begin{array}{rrrr} a & b \\ c & 1 \end{array}\right)
+    \]
+    where $a,b,c\in\mathbb{R}$ and $a\neq 0$.  Show that the above matrix is row equivalent to the following matrix
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a}
+\end{array} \right).
+\]
+
+    
+    \item[(b)] Show that the first matrix is the row equivalent to the
+identity matrix if and only if $a\neq bc$
+
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(a)]     
+
+\item[(b)]     
+
+\end{enumerate}
+
+\section*{2.3: Exercise 21} 
+\addcontentsline{toc}{section}{2.3: Exercise 21} 
+
+In Exercise 3, let 
+$x=(1.2,1.4,-2.45)$ and $y=(-2.6,1.1,0.65)$. Use MATLAB to compute the 
+given expression.
+
+\begin{enumerate}
+    \item[(3) ]$3.27x-7.4y$
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(3)]     
+$3.27x - 7.4y =  \boxed{(23.1640, -3.5620, -12.8215)}$
+\end{enumerate}
+
+\begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
+x = [1.2 1.4 -2.45];
+y = [-2.6 1.1 0.65];
+
+result = 3.27 * x -7.4 * y 
+
+>> ex3hw1
+
+result =
+
+   23.1640   -3.5620  -12.8215
+
+\end{lstlisting}
+
+
+\section*{1.3: Exercise 18} 
+\addcontentsline{toc}{section}{1.3: Exercise 18} 
+
+Every diagonal matrix is a scalar multiple of the identity matrix.
+
+\begin{enumerate}
+    \item[(18)] True or False
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(18)]     
+$ \boxed{False}$ \\
+Consider the following diagonal matrix:
+
+$
+\begin{bmatrix}
+2 & 0 \\
+0 & 3
+\end{bmatrix}
+$
+
+This matrix is not a scalar multiple of the identity matrix because there is no scalar that can be multiplied by the identity matrix to produce this matrix.
+\end{enumerate}
+
+
+\section*{1.4: Exercise 9} 
+\addcontentsline{toc}{section}{1.4: Exercise 9} 
+
+Find a real number $a$ so that the vectors
+\[
+x = (1,3,2) \text{ and } y = (2,a,-6)
+\]
+are perpendicular.\\
+
+
+\sol 
+
+\begin{enumerate}
+\item[(9)]     
+Dot product:
+\begin{align*}
+x \cdot y &= (1,3,2) \cdot (2,a,-6) \\
+&= 1 \cdot 2 + 3 \cdot a + 2 \cdot (-6) \\
+&= 2 + 3a - 12 \\
+&= 3a - 10
+\end{align*}
+
+Setting the dot product to zero:
+\begin{align*}
+3a - 10 &= 0 \\
+3a &= 10 \\
+a &= \boxed{\frac{10}{3}}
+\end{align*}
+\end{enumerate}
+
+
+
+
+
+\section*{2.1: Exercise 7} 
+\addcontentsline{toc}{section}{2.1: Exercise 7} 
+
+Find a quadratic polynomial $p(x) = ax^2 + bx + c$
+  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+
+\sol 
+
+\begin{enumerate}
+
+\item[(a)]  
+\begin{align*}
+& \text{Using the given information, we set up a system of equations:} \\
+1. & \quad p(0) = a(0)^2 + b(0) + c = 1, \quad \text{which gives } c = 1. \\
+2. & \quad p(1) = a(1)^2 + b(1) + 1 = 5, \quad \text{which simplifies to } a + b = 4. \\
+3. & \quad p(-1) = a(-1)^2 + b(-1) + 1 = -5, \quad \text{which simplifies to } a - b = -6. \\
+& \text{Solving the system of equations:} \\
+& \text{Adding equations 2 and 3, we obtain } 2a = -2, \quad \text{so } a = -1. \\
+& \text{Substituting } a = -1 \text{ into equation 2, we get } -1 + b = 4, \quad \text{so } b = 5. \\
+& \text{Therefore, the quadratic polynomial satisfying the given conditions is:} \\
+& \boxed{p(x) = -x^2 + 5x + 1}
+\end{align*}
+\item[(b)]
+\begin{align*}
+p(0) &= L \implies c = L \\
+p(1) &= M \implies a + b + c = M \implies a + b = M - L \\
+p(-1) &= N \implies a - b + c = N \implies a - b = N - L
+\end{align*}
+\begin{align*}
+2a &= (a + b) + (a - b) = M - L + N - L = M + N - 2L \\
+\implies a &= \frac{M + N - 2L}{2} \\
+2b &= (a + b) - (a - b) = M - L - (N - L) = M - N \\
+\implies b &= \frac{M - N}{2} \\
+\boxed{(a,b,c) = (\frac{M + N - 2L}{2},\frac{M - N}{2},L)}
+\end{align*}
+
+
+\item[(c)]
+
+\begin{align*}
+ax_1^2 + bx_1 + c &= A_1 \\
+ax_2^2 + bx_2 + c &= A_2 \\
+ax_3^2 + bx_3 + c &= A_3
+\end{align*}
+\begin{align*}
+\boxed{
+\begin{array}{ccc}
+q(x_1) &= A_1 \implies ax_1^2 + bx_1 + c = A_1 \\
+q(x_2) &= A_2 \implies ax_2^2 + bx_2 + c = A_2 \\
+q(x_3) &= A_3 \implies ax_3^2 + bx_3 + c = A_3
+\end{array}
+}
+\end{align*}
+
+\end{enumerate}
+
+
+
+
+\section*{2.2: Exercise 5} 
+\addcontentsline{toc}{section}{2.2: Exercise 5} 
+
+Find the cosine of the angle between the normal vectors to the planes 
+\[
+2x - 2y + z = 14 \qquad \text{and}\qquad x + y - 2z = -10
+\]
+
+
+\sol 
+
+\begin{enumerate}
+\item[(5)]     
+
+\begin{align*}
+\cos \theta &= \frac{\begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \cdot \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix}}{\left| \begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \right| \left| \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix} \right|} \
+&= \frac{(2)(1) + (-2)(1) + (1)(-2)}{\sqrt{2^2 + (-2)^2 + 1^2} \sqrt{1^2 + 1^2 + (-2)^2}} \
+&= \frac{-2}{\sqrt{9} \sqrt{6}} \
+&= \boxed{-\frac{2}{3\sqrt{6}}}.
+\end{align*}
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
