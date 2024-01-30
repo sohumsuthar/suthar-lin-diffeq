@@ -1,18 +1,28 @@
 \documentclass{report}
 \usepackage{fancyhdr}
+\usepackage{amsmath}
 \input{preamble}
 \input{macros}
 \input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
 
-% Define the fancyhdr style
+
+
 \pagestyle{fancy}
-\fancyhf{} % Clear default header and footer
-\rhead{\thepage} % Right-justify the page number in the header
-\lhead{Sohum Suthar} 
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
 
-\title{\Huge{MATH 2568}\\homework \#1}
-\author{\huge{Sohum Suthar}}
-\date{\huge {01/09/2024}}
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#1}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#1}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {01/20/2024}}
 
 \begin{document}
 
@@ -22,8 +32,36 @@
 \tableofcontents
 \pagebreak
 
-\section*{1.1: Exercise 2} % Unnumbered section with a custom title
-\addcontentsline{toc}{section}{1.1: Exercise 2} % Add entry to table of contents
+
+
+
+
+\section*{1.1: Exercise 2} 
+\addcontentsline{toc}{section}{1.1: Exercise 2} 
+
+In Exercise 2, let $x=(2,1,3)$ and 
+$y=(1,1,-1)$ and compute the given expression.
+
+\begin{enumerate}
+    \item[(2)] $2x-3y$
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(2)]     
+ $2x - 3y = (4,2,6) - (3,3,-3) = \boxed{(1,-1,9)} $
+\end{enumerate}
+
+
+
+
+
+
+
+\section*{1.1: Exercise 4} 
+\addcontentsline{toc}{section}{1.1: Exercise 4} 
 
 Let $A$ be the $3\times 4$ matrix
 \[
@@ -32,7 +70,7 @@ A=\left(\begin{array}{rrrr} 2 & -1 & 0 & 1 \\ 3 & 4 & -7 & 10\\
 \]
 
 \begin{enumerate}
-    \item[(a)] For which $n$ is a row of $A$ a vector in $\RR^n$? % \[n = 4.\]
+    \item[(a)] For which $n$ is a row of $A$ a vector in $\RR^n$? 
     
     \item[(b)] What is the $2^{nd}$ column of $A$?
 
@@ -41,27 +79,211 @@ A=\left(\begin{array}{rrrr} 2 & -1 & 0 & 1 \\ 3 & 4 & -7 & 10\\
 
 \end{enumerate}
 
-
-
-
-\sol We have to take its complement and check whether that set is an open set, i.e., if it is a union of open balls.
+\sol 
 
 \begin{enumerate}
 \item[(a)]     
-\[n = 4.\]
+$ \boxed{n = 4}$
+Each row of the matrix $A$ has 4 elements: $(2, -1, 0, 1)$, $(3, 4, -7, 10)$, and $(6, -3, 4, 2)$. These elements are all real numbers, and they are ordered. Therefore, they satisfy the definition of a vector in $\mathbb{R}^4$.
 \item[(b)]     
-\[
+$
+ \boxed{
     \begin{bmatrix}
         -1 \\
         4 \\
         -3
     \end{bmatrix}
-    \]
+}
+ $
  
 \item[(c)] 
-    \[
-    a_{23}-a_{31} = -13.
-    \]
+   $
+    a_{23}-a_{31} =  \boxed{-13}
+   $
 \end{enumerate}
+
+\section*{1.2: Exercise 3} 
+\addcontentsline{toc}{section}{1.2: Exercise 3} 
+
+In Exercise 3, let 
+$x=(1.2,1.4,-2.45)$ and $y=(-2.6,1.1,0.65)$. Use MATLAB to compute the 
+given expression.
+
+\begin{enumerate}
+    \item[(3) ]$3.27x-7.4y$
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(3)]     
+$3.27x - 7.4y =  \boxed{(23.1640, -3.5620, -12.8215)}$
+\end{enumerate}
+
+\begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
+x = [1.2 1.4 -2.45];
+y = [-2.6 1.1 0.65];
+
+result = 3.27 * x -7.4 * y 
+
+>> ex3hw1
+
+result =
+
+   23.1640   -3.5620  -12.8215
+
+\end{lstlisting}
+
+
+\section*{1.3: Exercise 18} 
+\addcontentsline{toc}{section}{1.3: Exercise 18} 
+
+Every diagonal matrix is a scalar multiple of the identity matrix.
+
+\begin{enumerate}
+    \item[(18)] True or False
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(18)]     
+$ \boxed{False}$ \\
+Consider the following diagonal matrix:
+
+$
+\begin{bmatrix}
+2 & 0 \\
+0 & 3
+\end{bmatrix}
+$
+
+This matrix is not a scalar multiple of the identity matrix because there is no scalar that can be multiplied by the identity matrix to produce this matrix.
+\end{enumerate}
+
+
+\section*{1.4: Exercise 9} 
+\addcontentsline{toc}{section}{1.4: Exercise 9} 
+
+Find a real number $a$ so that the vectors
+\[
+x = (1,3,2) \text{ and } y = (2,a,-6)
+\]
+are perpendicular.\\
+
+
+\sol 
+
+\begin{enumerate}
+\item[(9)]     
+Dot product:
+\begin{align*}
+x \cdot y &= (1,3,2) \cdot (2,a,-6) \\
+&= 1 \cdot 2 + 3 \cdot a + 2 \cdot (-6) \\
+&= 2 + 3a - 12 \\
+&= 3a - 10
+\end{align*}
+
+Setting the dot product to zero:
+\begin{align*}
+3a - 10 &= 0 \\
+3a &= 10 \\
+a &= \boxed{\frac{10}{3}}
+\end{align*}
+\end{enumerate}
+
+
+
+
+
+\section*{2.1: Exercise 7} 
+\addcontentsline{toc}{section}{2.1: Exercise 7} 
+
+Find a quadratic polynomial $p(x) = ax^2 + bx + c$
+  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+
+\sol 
+
+\begin{enumerate}
+
+\item[(a)]  
+\begin{align*}
+& \text{Using the given information, we set up a system of equations:} \\
+1. & \quad p(0) = a(0)^2 + b(0) + c = 1, \quad \text{which gives } c = 1. \\
+2. & \quad p(1) = a(1)^2 + b(1) + 1 = 5, \quad \text{which simplifies to } a + b = 4. \\
+3. & \quad p(-1) = a(-1)^2 + b(-1) + 1 = -5, \quad \text{which simplifies to } a - b = -6. \\
+& \text{Solving the system of equations:} \\
+& \text{Adding equations 2 and 3, we obtain } 2a = -2, \quad \text{so } a = -1. \\
+& \text{Substituting } a = -1 \text{ into equation 2, we get } -1 + b = 4, \quad \text{so } b = 5. \\
+& \text{Therefore, the quadratic polynomial satisfying the given conditions is:} \\
+& \boxed{p(x) = -x^2 + 5x + 1}
+\end{align*}
+\item[(b)]
+\begin{align*}
+p(0) &= L \implies c = L \\
+p(1) &= M \implies a + b + c = M \implies a + b = M - L \\
+p(-1) &= N \implies a - b + c = N \implies a - b = N - L
+\end{align*}
+\begin{align*}
+2a &= (a + b) + (a - b) = M - L + N - L = M + N - 2L \\
+\implies a &= \frac{M + N - 2L}{2} \\
+2b &= (a + b) - (a - b) = M - L - (N - L) = M - N \\
+\implies b &= \frac{M - N}{2} \\
+\boxed{(a,b,c) = (\frac{M + N - 2L}{2},\frac{M - N}{2},L)}
+\end{align*}
+
+
+\item[(c)]
+
+\begin{align*}
+ax_1^2 + bx_1 + c &= A_1 \\
+ax_2^2 + bx_2 + c &= A_2 \\
+ax_3^2 + bx_3 + c &= A_3
+\end{align*}
+\begin{align*}
+\boxed{
+\begin{array}{ccc}
+q(x_1) &= A_1 \implies ax_1^2 + bx_1 + c = A_1 \\
+q(x_2) &= A_2 \implies ax_2^2 + bx_2 + c = A_2 \\
+q(x_3) &= A_3 \implies ax_3^2 + bx_3 + c = A_3
+\end{array}
+}
+\end{align*}
+
+\end{enumerate}
+
+
+
+
+\section*{2.2: Exercise 5} 
+\addcontentsline{toc}{section}{2.2: Exercise 5} 
+
+Find the cosine of the angle between the normal vectors to the planes 
+\[
+2x - 2y + z = 14 \qquad \text{and}\qquad x + y - 2z = -10
+\]
+
+
+\sol 
+
+\begin{enumerate}
+\item[(5)]     
+
+\begin{align*}
+\cos \theta &= \frac{\begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \cdot \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix}}{\left| \begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \right| \left| \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix} \right|} \
+&= \frac{(2)(1) + (-2)(1) + (1)(-2)}{\sqrt{2^2 + (-2)^2 + 1^2} \sqrt{1^2 + 1^2 + (-2)^2}} \
+&= \frac{-2}{\sqrt{9} \sqrt{6}} \
+&= \boxed{-\frac{2}{3\sqrt{6}}}.
+\end{align*}
+
+
+
+\end{enumerate}
+
+
+
+
 
 \end{document}
