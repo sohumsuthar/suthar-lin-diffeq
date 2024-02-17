@@ -1,0 +1,457 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
+
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#3}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#3}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {02/10/2024}}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+
+
+
+
+\section*{3.1: exercise 1} 
+\addcontentsline{toc}{section}{3.1: exercise 1} 
+
+Let
+\begin{equation}
+A = \begin{pmatrix} 2 & 1 \\ -1 & 4 \end{pmatrix} \quad \text{and} \quad x = \begin{pmatrix} 3 \\ -2 \end{pmatrix}
+\end{equation}
+
+
+\begin{enumerate}
+    \item[(1)] Compute $Ax$
+
+
+
+
+
+    
+\end{enumerate}
+
+\sol
+
+\begin{enumerate}
+\item[(1)]
+\[
+Ax =
+\left(\begin{array}{rr} 2 & 1 \\ -1 & 4\end{array}\right)
+\left(\begin{array}{r} 3 \\ -2\end{array}\right) =
+\left(\begin{array}{r} 6 - 2 \\ -3 - 8\end{array}\right) =
+\boxed{\left(\begin{array}{r} 4 \\ -11\end{array}\right)}
+\]
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\section*{3.1: exercise 4} 
+\addcontentsline{toc}{section}{3.1: exercise 4} 
+    In exercise 4 decide whether or
+not the matrix vector product $Ax$ can be computed; if it can, compute the
+product.
+\begin{enumerate}
+    \item[(4)] 
+
+\begin{equation}
+A = \begin{pmatrix} 1 & 2 \\ 0 & -5 \end{pmatrix} \quad \text{and} \quad x = \begin{pmatrix} 2 \\ 2 \\4 \end{pmatrix}
+\end{equation}
+    
+
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item[(4)] The matrix-vector product $Ax$ \boxed{cannot} be computed. 
+This is because the number of columns in the matrix $A$ (2) does not match the number of elements in the vector $x$ (3). For matrix-vector multiplication to be defined, these dimensions must be equal.
+
+\end{enumerate}
+
+\section*{3.2: exercise 9} 
+\addcontentsline{toc}{section}{3.2: exercise 9} 
+
+\begin{enumerate}
+    \item[(9)] Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the line $x=y$.
+
+
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item[(9)]
+Consider a map, denoted by $L_A$, that reflects vectors across the line $y=x$.  We can represent this transformation as $(x, y) \mapsto (y, x)$, where $(x, y)$ is the original vector and $(y, x)$ is its reflected counterpart.
+
+This reflection can be conveniently described using a linear transformation matrix, denoted by $A$. In this case, the appropriate matrix is:
+
+\[
+A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+\]
+\end{enumerate}
+
+
+
+
+\section*{3.2: exercise 10} 
+\addcontentsline{toc}{section}{3.2: exercise 10} 
+Suppose the mapping $L: \mathbb{R}^3 \to \mathbb{R}^2$ is linear and satisfies the following equations:
+
+\begin{align*}
+L \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} &= \begin{pmatrix} 1 \\ 2 \end{pmatrix} \\
+L \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} &= \begin{pmatrix} 2 \\ 0 \end{pmatrix} \\
+L \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} &= \begin{pmatrix} -1 \\ 4 \end{pmatrix}\\
+\end{align*}
+\begin{enumerate}
+    \item[(10)] What is the  $2\times 3$ matrix $A$ such that $L = L_A$?
+
+
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item[(10)]
+Because $(0,1,0) = (0,1,1) - (0,0,1)$,  the second column must be:
+
+\[
+L \begin{pmatrix} 0 \\ 1\\ 0 \end{pmatrix} = \left(\begin{array}{c} 2 \\ 0 \end{array}\right) - \left(\begin{array}{r} -1 \\ 4 \end{array}\right) = \begin{pmatrix} 3 \\ -4 \end{pmatrix}
+\]
+\[
+A = \boxed{\begin{pmatrix}
+1 & 3 & -1 \\
+2 & -4 & 4
+\end{pmatrix}}
+\]
+\end{enumerate}
+
+
+\section*{3.3: exercise 10} 
+\addcontentsline{toc}{section}{3.3: exercise 10} 
+Determine which of the following maps are linear maps.  If the map is linear give the matrix associated to the linear map. Explain your reasoning.
+
+\begin{enumerate}
+ \item $L_1: \mathbb{R}^2 \to \mathbb{R}^2$ maps $\begin{pmatrix} x \\ y \end{pmatrix}$ to $\begin{pmatrix} x + y + 3 \\ 2y + 1 \end{pmatrix}$.
+    \item $L_2: \mathbb{R}^2 \to \mathbb{R}^3$ maps $\begin{pmatrix} x \\ y \end{pmatrix}$ to $\begin{pmatrix} \sin x \\ x + y \\ 2y \end{pmatrix}$.
+    \item $L_3: \mathbb{R}^2 \to \mathbb{R}$ maps $\begin{pmatrix} x \\ y \end{pmatrix}$ to $x + y$.
+
+
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item A linear map sends the origin to the origin. However, $L_1 \begin{pmatrix} 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 3 \\ 1 \end{pmatrix} \neq \begin{pmatrix} 0 \\ 0 \end{pmatrix}$, so $L_1$ is not linear.
+
+\item Linear maps $L$ satisfy $L(cX) = cL(X)$. In this case,
+\[
+cL_2 \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} c\sin x \\ cx + cy \\ 2cy \end{pmatrix} \quad \text{and} \quad
+L_2 \left( \begin{pmatrix} cx \\ cy \end{pmatrix} \right) = \begin{pmatrix} \sin (cx) \\ cx + cy \\ 2cy \end{pmatrix}
+\]
+Since $\sin(cx) \neq c\sin(x)$, $L_2$ is not linear.
+
+\item All matrix mappings are linear. We can write
+\[
+L_3 \begin{pmatrix} x \\ y \end{pmatrix} = x + y = \begin{pmatrix} 1 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}
+\]
+Therefore, $L_3$ is linear with the $1 \times 2$ matrix $A = \begin{pmatrix} 1 & 1 \end{pmatrix}$.
+\end{enumerate}
+
+
+
+\section*{3.4: exercise 2} 
+\addcontentsline{toc}{section}{3.4: exercise 2} 
+Write all solutions to the homogeneous system of linear
+equations as the general superposition of three vectors.
+
+\begin{enumerate}
+    \item[(2)]
+\begin{eqnarray*}
+x_1+2x_2+x_4-x_5 = 0\\
+x_3-2x_4+x_5 = 0
+\end{eqnarray*}
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item[(2)]
+
+
+
+
+
+
+
+
+Given the vectors:
+
+\begin{align*}
+\mathbf{v}_1 &= \begin{pmatrix} -2 \\ 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}, \\
+\mathbf{v}_2 &= \begin{pmatrix} -1 \\ 0 \\ 2 \\ 1 \\ 0 \end{pmatrix}, \\
+\mathbf{v}_3 &= \begin{pmatrix} 1 \\ 0 \\ -1 \\ 0 \\ 1 \end{pmatrix}.
+\end{align*}
+
+We want to write the matrix of the corresponding homogeneous system and find its solutions.
+
+
+The homogeneous system consists of equations where each vector $\mathbf{v}_i$ forms a separate row. Therefore, the matrix of the system is:
+
+\[
+\mathbf{A} = \begin{pmatrix}
+1 & 2 & 0 & 1 & -1 \\
+0 & 0 & 1 & -2 & 1
+\end{pmatrix}.
+\]
+
+
+We cannot simplify this matrix further using row reduction. Therefore, any solution can be written as a linear combination of the original vectors:
+
+\[
+\mathbf{x} = x_2 \mathbf{v}_2 + x_4 \mathbf{v}_4 + x_5 \mathbf{v}_5 = \begin{pmatrix} x_5 - x_4 - 2x_2 \\ x_2 \\ -x_5 + 2x_4 \\ x_4 \\ x_5 \end{pmatrix} = x_2 \begin{pmatrix} -2 \\ 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} + x_4 \begin{pmatrix} -1 \\ 0 \\ 2 \\ 1 \\ 0 \end{pmatrix} + x_5 \begin{pmatrix} 1 \\ 0 \\ -1 \\ 0 \\ 1 \end{pmatrix}.
+\]
+
+This expresses the solution space as the span of three linearly independent vectors, confirming that the system has infinitely many solutions.
+
+\end{enumerate}
+
+
+
+
+\section*{3.4: exercise 8(a)} 
+\addcontentsline{toc}{section}{3.4: exercise 8(a)} 
+
+Let $A$ be a $3\times 3$ matrix.  Suppose 
+\begin{align*}
+A \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} &= \begin{pmatrix} 3 \\ 1 \\ 1 \end{pmatrix} \\
+A \begin{pmatrix} 0 \\ 4 \\ 0 \end{pmatrix} &= \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix}
+\end{align*}
+Find a solution to the inhomogeneous system 
+\begin{equation*}
+Ax = \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}
+\end{equation*}
+
+
+\sol
+
+\begin{enumerate}
+\item[(a)]
+
+
+\begin{align*}
+% Given equations
+A \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} &= \begin{pmatrix} 3 \\ 1 \\ 1 \end{pmatrix} \\
+A \begin{pmatrix} 0 \\ 4 \\ 0 \end{pmatrix} &= \begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix} \\
+% Combined equation
+A \begin{pmatrix} -1 & 0 \\ 2 & 4 \\ 1 & 0 \end{pmatrix} &= \begin{pmatrix} 3 & -2 \\ 1 & 0 \\ 1 & 1 \end{pmatrix} \\
+% Solution vector as linear combination
+\mathbf{x} &= t \begin{pmatrix} -1 \\ 2 \\ 1 \end{pmatrix} + s \begin{pmatrix} 0 \\ 4 \\ 0 \end{pmatrix} = \begin{pmatrix} -t \\ 2t+4s \\ t \end{pmatrix} \\
+% Substitute and solve for scalars
+A \begin{pmatrix} -t \\ 2t+4s \\ t \end{pmatrix} &= \begin{pmatrix} 3 & -2 \\ 1 & 0 \\ 1 & 1 \end{pmatrix} \\
+\Rightarrow \begin{pmatrix} -at & 2at+4as & at \end{pmatrix} &= \begin{pmatrix} 3 & -2 \\ 1 & 0 \\ 1 & 1 \end{pmatrix} \\
+& \Rightarrow t = 1, \ s = -\frac{1}{2} \\
+% Final solution
+\mathbf{x} &= \begin{pmatrix} -1 \\ 2+4 \cdot (-\frac{1}{2}) \\ 1 \end{pmatrix} \\
+&= \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}
+\end{align*}
+
+
+
+Therefore, $\mathbf{x} = \boxed{\begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}}$ is a solution.
+\end{enumerate}
+
+
+
+
+\section*{3.5: exercise 3} 
+\addcontentsline{toc}{section}{3.5: exercise 3} 
+In this exercise determine whether or 
+not the matrix products $AB$ or $BA$ can be computed for each given pair of 
+matrices $A$ and $B$.  If the product is possible, perform the computation.
+\begin{enumerate}
+\item[(3)]
+$A=\left(\begin{array}{rrrr} 8 & 0 & 2 & 3\\ -3 & 0 & -10 &
+3\end{array}\right)$
+and $B=\left(\begin{array}{rrr} 0 & 2 & 5\\ -1 & 3 & -1 \\ 0 & 1 &
+-5\end{array}\right)$.
+
+\end{enumerate}
+
+\sol
+
+\begin{enumerate}
+\item[(3)]
+The number of columns in A (4) is not equal to the number of rows in B (3), thus AB is not defined.\\
+The number of columns in B (3) is not equal to the number of rows in A (2), thus BA is also not defined.\\
+
+Therefore, neither $AB$ nor $BA$ can be computed.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{3.6: exercise 6 (MATLAB)} 
+\addcontentsline{toc}{section}{3.6: exercise 6 (MATLAB)} 
+In exercise 6 use MATLAB to
+verify that $(A+B)C = AC+BC$ for the given matrices.
+
+\begin{enumerate}
+    \item[(6)] 
+\begin{equation*}
+A = \begin{pmatrix} 0 & 2 \\ 2 & 1 \end{pmatrix}, \quad
+B = \begin{pmatrix} -2 & 1 \\ 3 & 0 \end{pmatrix}, \quad
+C = \begin{pmatrix} 2 & -1 \\ 1 & 5 \end{pmatrix}
+\end{equation*}
+    
+\end{enumerate}
+
+\sol 
+
+\begin{enumerate}
+\item[(6)] 
+\end{enumerate}
+
+\begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
+A = [0 2; 2 1];
+B = [-2 1; 3 0];
+C = [2 -1; 1 5];
+
+leftSide = (A + B) * C
+
+rightSide = A * C + B * C
+
+
+
+>>>3.6ex6
+
+leftSide =
+
+    -1    17
+    11     0
+
+
+rightSide =
+
+    -1    17
+    11     0
+
+\end{lstlisting}
+
+
+
+
+
+
+\section*{3.6: exercise 10 (MATLAB)} 
+\addcontentsline{toc}{section}{3.6: exercise 10 (MATLAB)} 
+
+Experimentally, find two symmetric $2\times 2$ matrices $A$ and $B$ for
+which the matrix product $AB$ is {\em not\/} symmetric.
+
+
+\sol 
+
+
+
+
+
+
+\begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
+A = randi(10, 2);
+B = A';
+
+
+C = A * B;
+isSymmetric = isequal(C, C');
+while issymmetric
+    A = randi(10, 2);
+    B = A'
+    C = A * B;
+    isSymmetric = isequal(C, C');
+end
+fprintf('Non-symmetric product:\n');
+A
+B
+C
+
+
+>> 3.6ex10
+Non-symmetric product C:
+
+A =
+
+     2     2
+     3    10
+
+
+B =
+
+     2     3
+     2    10
+
+
+C =
+
+     8    26
+    26   109
+
+
+
+
+
+\end{lstlisting}
+
+
+
+
+
+
+
+\end{document}

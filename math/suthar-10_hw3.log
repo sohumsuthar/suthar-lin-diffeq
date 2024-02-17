@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.1.17)  30 JAN 2024 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.1.17)  12 FEB 2024 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math/suthar-10_hw2.tex
-(C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math/suthar-10_hw2.tex
+**C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math/suthar-10_hw3.tex
+(C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math/suthar-10_hw3.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
 (C:\Users\sohum\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1406,13 +1406,12 @@ Package: titletoc 2023/10/27 v2.16 TOC entries
 \ttl@leftsep=\dimen331
 )) (C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math\macros.tex)
 (C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math\letterfonts.tex)
-(C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math\suthar-10_hw2.aux)
-\openout1 = `suthar-10_hw2.aux'.
+No file suthar-10_hw3.aux.
+\openout1 = `suthar-10_hw3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 27.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
  27.
-
 (C:\Users\sohum\AppData\Local\Programs\MiKTeX\tex/latex/newpx\omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
@@ -1585,9 +1584,9 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-(C:/Users/sohum/Documents/GitHub/suthar-lin-diffeq/math\suthar-10_hw2.toc)
+No file suthar-10_hw3.toc.
 \tf@toc=\write5
-\openout5 = `suthar-10_hw2.toc'.
+\openout5 = `suthar-10_hw3.toc'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1600,33 +1599,85 @@ l.34
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 47.
+(Font)              size <5> substituted on input line 43.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.120 \begin{bmatrix}
-                      1 & \frac{b}{a} \\ 0 & 0 \end{bmatrix}
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.120 ...x} 1 & \frac{b}{a} \\ 0 & 0 \end{bmatrix}
-                                                  
-? 
 [2{C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newpx/px-lms.en
 c}]
+
+LaTeX Font Warning: Font shape `OT1/cmr/b/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 217.
+
+[3] [4]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.308 A = \begin{pmatrix}
+                         
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.311 \end{pmatrix}
+                   , \quad
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.312 B = \begin{pmatrix}
+                         
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.315 \end{pmatrix}
+                   , \quad
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.316 C = \begin{pmatrix}
+                         
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.319 \end{pmatrix}
+                   
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--329
+
+ []
+
 (C:\Users\sohum\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 154.
+nput line 331.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+40.
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+(C:\Users\sohum\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 340.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 385--388
 
  []
 
-[3] [4] (suthar-10_hw2.aux)
+[6]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
+29.
+ (C:\Users\sohum\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 429.
+
+[7] (suthar-10_hw3.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -1639,33 +1690,39 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 38117 strings out of 475248
- 759211 string characters out of 5757813
- 1945785 words of memory out of 5000000
- 58941 multiletter control sequences out of 15000+600000
- 596278 words of font info for 142 fonts, out of 8000000 for 9000
+ 38214 strings out of 475248
+ 760451 string characters out of 5757813
+ 1947785 words of memory out of 5000000
+ 58996 multiletter control sequences out of 15000+600000
+ 596673 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,18n,102p,605b,1678s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/NewPXM
-I.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/Ne
-wPXMI_gnu.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/sohum/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/sohum/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/sohum/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/soh
-um/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
-ers/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb
-><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxmiaX.
-pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/pxsy
-s.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/tx
-exs.pfb>
-Output written on suthar-10_hw2.pdf (5 pages, 160514 bytes).
+ 99i,15n,102p,605b,2547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\sohum\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1000.pk><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/newpx/
+NewPXMI.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/ne
+wpx/NewPXMI_gnu.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmb10.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/sohum/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sohum/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/sohum/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/soh
+um/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
+sers/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr5.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr7.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/newpx/pxmiaX.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/font
+s/type1/public/newpx/pxsys.pfb><C:/Users/sohum/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/newtx/txexs.pfb>
+Output written on suthar-10_hw3.pdf (8 pages, 201701 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 

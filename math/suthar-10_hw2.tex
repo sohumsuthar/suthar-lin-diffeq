@@ -20,9 +20,9 @@
 
 \fancyhead[C]{MATH 2568 Homework \#2}
 
-\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#1}
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#2}
 \author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
-\date{\huge {01/20/2024}}
+\date{\huge {01/28/2024}}
 
 \begin{document}
 
@@ -45,21 +45,19 @@ whether the given matrix is in reduced echelon form.
 \begin{enumerate}
     \item[(1)] 
     \[
-    \left(\begin{array}{rrrr} 1 & -1 & 0 & 1 \\0 &  1 &  0 &  -6\\ 0 & 0 & 1 & 0 \end{array}\right)
+\begin{bmatrix} 1 & -1 & 0 & 1 \\0 &  1 &  0 &  -6\\ 0 & 0 & 1 & 0 \end{bmatrix}
 \]
     
 \end{enumerate}
 
-\sol 
+\sol
 
 \begin{enumerate}
-\item[(1)]     
-
-
-%SOL HERE
-
-
+\item[(1)] The matrix is not in reduced echelon form because the fourth column, although containing a leading 1, has a non-zero entry below it in the second row (-6). Reduced echelon form requires all entries below leading 1's to be zero. Therefore, the matrix is $\boxed{\text{not}}$ in reduced echelon form.
 \end{enumerate}
+
+
+
 
 
 
@@ -73,12 +71,12 @@ whether the given matrix is in reduced echelon form.
 \begin{enumerate}
     \item[(a)] Consider the $2\times 2$ matrix
     \[ 
-    \left(\begin{array}{rrrr} a & b \\ c & 1 \end{array}\right)
+   \begin{bmatrix} a & b \\ c & 1 \end{bmatrix}
     \]
     where $a,b,c\in\mathbb{R}$ and $a\neq 0$.  Show that the above matrix is row equivalent to the following matrix
 \[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a}
-\end{array} \right).
+\begin{bmatrix} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a}
+\end{bmatrix} 
 \]
 
     
@@ -87,193 +85,196 @@ identity matrix if and only if $a\neq bc$
 
 \end{enumerate}
 
-\sol 
+
+\sol
 
 \begin{enumerate}
-\item[(a)]     
+\item[(a)] We perform row operations to transform the given matrix into the desired form:
 
-\item[(b)]     
-
+\begin{enumerate}
+\item Multiply the first row by $\frac{1}{a}$:
+\[
+\begin{bmatrix} 1 & \frac{b}{a} \\ c & 1 \end{bmatrix}
+\]
+\item Add $-c$ times the first row to the second row:
+\[
+\begin{bmatrix} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a} \end{bmatrix}
+\]
 \end{enumerate}
 
-\section*{2.3: Exercise 21} 
-\addcontentsline{toc}{section}{2.3: Exercise 21} 
 
-In Exercise 3, let 
-$x=(1.2,1.4,-2.45)$ and $y=(-2.6,1.1,0.65)$. Use MATLAB to compute the 
-given expression.
+\item[(b)] We continue row operations on the matrix obtained in part (a):
 
 \begin{enumerate}
-    \item[(3) ]$3.27x-7.4y$
+\item Multiply the second row by $\frac{a}{a-bc}$ (assuming $a \neq bc$):
+\[
+\begin{bmatrix} 1 & \frac{b}{a} \\ 0 & 1 \end{bmatrix}
+\]
+\item Add $-\frac{b}{a}$ times the second row to the first row to produce:
+\[
+\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\]
+\end{enumerate}
+
+
+If $a = bc$, the second row operation in part (b) is not valid, as we would be dividing by zero. Therefore, the first matrix is row equivalent to the identity matrix if and only if $a \neq bc$.
+\end{enumerate}
+
+\section*{2.3: Exercise 21 (MATLAB)} 
+\addcontentsline{toc}{section}{2.3: Exercise 21 (MATLAB)} 
+
+In this Exercise, use elementary row
+operations and MATLAB to put each of the given matrices into row echelon
+form.  Suppose that the matrix is the augmented matrix for a system of
+linear equations.  Is the system consistent or inconsistent?
+
+\begin{enumerate}
+    \item[(21)]
+\[
+\begin{bmatrix}
+ 2 &  1  &  1   \\
+ 4 &  2  &  3
+\end{bmatrix}.
+\]
     
 \end{enumerate}
 
 \sol 
 
 \begin{enumerate}
-\item[(3)]     
-$3.27x - 7.4y =  \boxed{(23.1640, -3.5620, -12.8215)}$
+\item[(21)] $\begin{bmatrix}1&0.5000&0.5000 \\ 0&0&1 \end{bmatrix}$ \\
+\\
+The system is inconsistent due to the fact that the $2^{nd}$ row of the matrix is the equivalent of $0 = 1$
 \end{enumerate}
 
 \begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
-x = [1.2 1.4 -2.45];
-y = [-2.6 1.1 0.65];
+M = [2 1 1; 4 2 3];
 
-result = 3.27 * x -7.4 * y 
+M(1, :) = M(1, :) / 2;
+M(2,:) = M(2, :) - 4 * M(1, :);
 
->> ex3hw1
 
-result =
+ans = M
 
-   23.1640   -3.5620  -12.8215
+>>>2.3ex21
+ans =
+
+    1.0000    0.5000    0.5000
+         0         0    1.0000
 
 \end{lstlisting}
 
 
-\section*{1.3: Exercise 18} 
-\addcontentsline{toc}{section}{1.3: Exercise 18} 
+\section*{2.4: Exercise 3} 
+\addcontentsline{toc}{section}{2.4: Exercise 3} 
 
-Every diagonal matrix is a scalar multiple of the identity matrix.
+How many solutions does the equation
+\[
+A \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}
+\]
+have for the following choices of $A$.  Explain your reasoning.
 
 \begin{enumerate}
-    \item[(18)] True or False
+    \item[(a)] \(A = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}\)
+    \item[(b)] \(A = \begin{bmatrix} 1 & 3 & 1 \\ 2 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\)
+    \item[(c)] \(A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 1 \end{bmatrix}\)
+\end{enumerate}
+
+\sol
+
+\begin{enumerate}
+\item[(a)] $A = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$
+
+Row three implies $0 = 1$. Therefore, there are $\boxed{\text{no possible solutions}}$ making the system inconsistent.
+
+\item[(b)] $A = \begin{bmatrix} 1 & 3 & 1 \\ 2 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$
+
+The matrix is a row equivalent to the identity matrix $I_3$. Thus, there is $\boxed{\text{one}}$ solution.
+
+\item[(c)] $A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 1 \end{bmatrix}$
+
+When the matrix is conjugated into echelon form, the rank of $A$ is equal to the rank of the augumented matrix of $2$, implying that there are $\boxed{\infty}$ solutions.	
+\end{enumerate}
+
+
+
+\section*{2.4: Exercise 4} 
+\addcontentsline{toc}{section}{2.4: Exercise 4}  
+
+The augmented matrix of a consistent system of five equations in seven
+unknowns has rank equal to three.  How many parameters are needed to
+specify all solutions? \\
+
+\sol
+
+\begin{enumerate}
+\item[(4)] Since the rank of the augmented matrix is 3, there are 7 - 3 = 4 free variables in the system. Therefore, we need $\boxed{4}$ parameters to specify all solutions.
+\end{enumerate}
+
+
+
+
+
+
+\section*{2.5: Exercise 4 (MATLAB)} 
+\addcontentsline{toc}{section}{2.5: Exercise 4 (MATLAB)} 
+
+In this Exercise use MATLAB to
+solve the given system of linear equations to four significant decimal places.
+
+\begin{enumerate}
+    \item[(4)]
+\[
+\begin{array}{rcrcrcr}
+     0.1 x_1 & + & \sqrt{5}x_2 & - &   2 x_3 & = & 1 \\
+-\sqrt{3}x_1 & + &     \pi x_2 & - & 2.6 x_3 & = & 14.3 \\
+         x_1 & - & 7 x_2 & + & \frac{\pi}{2}x_3 & = & \sqrt{2}
+\end{array}
+\]
     
 \end{enumerate}
 
 \sol 
 
 \begin{enumerate}
-\item[(18)]     
-$ \boxed{False}$ \\
-Consider the following diagonal matrix:
-
-$
-\begin{bmatrix}
-2 & 0 \\
-0 & 3
-\end{bmatrix}
-$
-
-This matrix is not a scalar multiple of the identity matrix because there is no scalar that can be multiplied by the identity matrix to produce this matrix.
-\end{enumerate}
-
-
-\section*{1.4: Exercise 9} 
-\addcontentsline{toc}{section}{1.4: Exercise 9} 
-
-Find a real number $a$ so that the vectors
-\[
-x = (1,3,2) \text{ and } y = (2,a,-6)
-\]
-are perpendicular.\\
-
-
-\sol 
-
-\begin{enumerate}
-\item[(9)]     
-Dot product:
-\begin{align*}
-x \cdot y &= (1,3,2) \cdot (2,a,-6) \\
-&= 1 \cdot 2 + 3 \cdot a + 2 \cdot (-6) \\
-&= 2 + 3a - 12 \\
-&= 3a - 10
-\end{align*}
-
-Setting the dot product to zero:
-\begin{align*}
-3a - 10 &= 0 \\
-3a &= 10 \\
-a &= \boxed{\frac{10}{3}}
-\end{align*}
-\end{enumerate}
-
-
-
-
-
-\section*{2.1: Exercise 7} 
-\addcontentsline{toc}{section}{2.1: Exercise 7} 
-
-Find a quadratic polynomial $p(x) = ax^2 + bx + c$
-  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
-
-\sol 
-
-\begin{enumerate}
-
-\item[(a)]  
-\begin{align*}
-& \text{Using the given information, we set up a system of equations:} \\
-1. & \quad p(0) = a(0)^2 + b(0) + c = 1, \quad \text{which gives } c = 1. \\
-2. & \quad p(1) = a(1)^2 + b(1) + 1 = 5, \quad \text{which simplifies to } a + b = 4. \\
-3. & \quad p(-1) = a(-1)^2 + b(-1) + 1 = -5, \quad \text{which simplifies to } a - b = -6. \\
-& \text{Solving the system of equations:} \\
-& \text{Adding equations 2 and 3, we obtain } 2a = -2, \quad \text{so } a = -1. \\
-& \text{Substituting } a = -1 \text{ into equation 2, we get } -1 + b = 4, \quad \text{so } b = 5. \\
-& \text{Therefore, the quadratic polynomial satisfying the given conditions is:} \\
-& \boxed{p(x) = -x^2 + 5x + 1}
-\end{align*}
-\item[(b)]
-\begin{align*}
-p(0) &= L \implies c = L \\
-p(1) &= M \implies a + b + c = M \implies a + b = M - L \\
-p(-1) &= N \implies a - b + c = N \implies a - b = N - L
-\end{align*}
-\begin{align*}
-2a &= (a + b) + (a - b) = M - L + N - L = M + N - 2L \\
-\implies a &= \frac{M + N - 2L}{2} \\
-2b &= (a + b) - (a - b) = M - L - (N - L) = M - N \\
-\implies b &= \frac{M - N}{2} \\
-\boxed{(a,b,c) = (\frac{M + N - 2L}{2},\frac{M - N}{2},L)}
-\end{align*}
-
-
-\item[(c)]
-
-\begin{align*}
-ax_1^2 + bx_1 + c &= A_1 \\
-ax_2^2 + bx_2 + c &= A_2 \\
-ax_3^2 + bx_3 + c &= A_3
-\end{align*}
-\begin{align*}
-\boxed{
-\begin{array}{ccc}
-q(x_1) &= A_1 \implies ax_1^2 + bx_1 + c = A_1 \\
-q(x_2) &= A_2 \implies ax_2^2 + bx_2 + c = A_2 \\
-q(x_3) &= A_3 \implies ax_3^2 + bx_3 + c = A_3
-\end{array}
-}
-\end{align*}
+\item[(4)] $\begin{bmatrix}-7.2216 \\ -1.9048 \\-2.9907 \end{bmatrix}$
 
 \end{enumerate}
 
+\begin{lstlisting}[language=Matlab, caption={MATLAB code}, xleftmargin=\parindent]
+L = [0.1, sqrt(5), -2; -sqrt(3), pi, -2.6; 1, -7, pi/2];
+R = [1; 14.3; sqrt(2)];
+
+ans = L\R
+
+>> 2.5ex4
+ans =
+
+   -7.2216
+   -1.9048
+   -2.9907
+
+\end{lstlisting}
 
 
 
-\section*{2.2: Exercise 5} 
-\addcontentsline{toc}{section}{2.2: Exercise 5} 
+\section*{2.5: Exercise 11} 
+\addcontentsline{toc}{section}{2.5: Exercise 11} 
 
-Find the cosine of the angle between the normal vectors to the planes 
-\[
-2x - 2y + z = 14 \qquad \text{and}\qquad x + y - 2z = -10
-\]
+Let $z=x+iy$ be a complex number. 
 
-
-\sol 
 
 \begin{enumerate}
-\item[(5)]     
+    \item[(a)] Verify that $z\bar{z}=x^2+y^2.$
+    \item[(b)] Verify that $\frac{1}{z}=\frac{x-iy}{x^2+y^2}.$
+\end{enumerate}
 
-\begin{align*}
-\cos \theta &= \frac{\begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \cdot \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix}}{\left| \begin{pmatrix} 2 \ -2 \ 1 \end{pmatrix} \right| \left| \begin{pmatrix} 1 \ 1 \ -2 \end{pmatrix} \right|} \
-&= \frac{(2)(1) + (-2)(1) + (1)(-2)}{\sqrt{2^2 + (-2)^2 + 1^2} \sqrt{1^2 + 1^2 + (-2)^2}} \
-&= \frac{-2}{\sqrt{9} \sqrt{6}} \
-&= \boxed{-\frac{2}{3\sqrt{6}}}.
-\end{align*}
+\sol
 
+\begin{enumerate}
+\item[(a)] $z\bar{z} = (x + iy)(x - iy) = x^2 - ixy + ixy - i^2y^2 = \boxed{x^2 + y^2}$.
 
-
+\item[(b)] $\frac{1}{z} = \frac{1}{x + iy} \cdot \frac{x - iy}{x - iy} = \boxed{\frac{x - iy}{x^2 + y^2}}$.
 \end{enumerate}
 
 
