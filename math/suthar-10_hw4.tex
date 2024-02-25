@@ -1,0 +1,249 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
+
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#4}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#4}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {02/17/2024}}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+
+
+
+
+\section*{3.7: exercise 2} 
+\addcontentsline{toc}{section}{3.7: exercise 2} 
+
+Let $\alpha \neq 0$ be a real number and let $A$ be an invertible
+matrix.  Show that the inverse of the matrix $\alpha A$ is given by
+$\frac{1}{\alpha}A^{-1}$.
+
+
+
+
+    
+
+
+\sol
+
+\begin{enumerate}
+\item[(2)]
+\begin{equation}
+\begin{boxed}{
+(\alpha A) \left( \frac{1}{\alpha} A^{-1} \right) = \left( \alpha \cdot \frac{1}{\alpha} \right) (AA^{-1}) = I}
+\end{boxed}
+\end{equation}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\section*{3.7: exercise 10} 
+\addcontentsline{toc}{section}{3.7: exercise 10} For which values of $a,b,c$ is the matrix
+
+\[A = \begin{pmatrix}
+1 & a & b \\
+0 & 1 & c \\
+0 & 0 & 1
+\end{pmatrix}
+\]
+
+invertible? Find $A^{-1}$ when it exists.
+
+
+
+
+\sol
+
+\begin{enumerate}
+\item[(10)]
+
+The matrix $A$ is invertible for any choice of $a$, $b$, and $c$, and
+\[
+A^{-1} = \begin{pmatrix} 1 & -a & -b + ac \\ 0 & 1 & -c \\ 0 & 0 & 1 \end{pmatrix}.
+\]
+
+A matrix is invertible if it is row equivalent to $I_n$. We demonstrate this by performing row reduction on the augmented matrix $(A|I_3)$:
+
+\begin{align*}
+\left( \begin{array}{rrr|rrr}
+1 & a & b & 1 & 0 & 0 \\
+0 & 1 & c & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array} \right) &\xrightarrow{R_1 \xrightarrow{-R_1+aR_2}} 
+\left( \begin{array}{rrr|rrc}
+1 & 0 & 0 & 1 & -a & -b + ac \\
+0 & 1 & 0 & 0 & 1 & -c \\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array} \right)
+\end{align*}
+
+Since the resulting matrix is in reduced row echelon form with a leading 1 in each row, $A$ is indeed invertible for any values of $a$, $b$, and $c$. Consequently, the inverse of $A$ is:
+
+$$A^{-1} = \boxed{\begin{pmatrix} 1 & -a & -b + ac \\ 0 & 1 & -c \\ 0 & 0 & 1 \end{pmatrix}}.$$
+
+\end{enumerate}
+
+
+
+
+
+
+
+\section*{3.7: exercise 14} 
+\addcontentsline{toc}{section}{3.7: exercise 14} 
+Suppose the mapping $L: \mathbb{R}^3 \to \mathbb{R}^2$ is linear and satisfies the following equations:
+Let $A$ and $B$ be $3\times 3$ invertible matrices so that
+
+\[A^{-1} = \begin{pmatrix}
+1 & 0 & -1 \\
+-1 & -1 & 0 \\
+0 & 1 & -1
+\end{pmatrix}
+\quad\text{and}\quad
+B^{-1} = \begin{pmatrix}
+1 & 1 & 1 \\
+1 & 1 & 0 \\
+1 & 0 & 0
+\end{pmatrix}
+\]
+
+Without computing $A$ or $B$, determine the following:
+
+
+\begin{enumerate}
+\item[(a)] The rank(A)
+    \item[(b)] The solution to $Bx = $
+\[
+\begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}
+\]
+    \item[(c)] $(2BA)^{-1}$
+    \item[(d)] The matrix $C$ so that $ACB+3I_3=0$.
+    
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}
+\item[(a)] is an invertible $3\times 3$ matrix, so $\rank(A)=\boxed{3}$.
+
+\item[(b)] The solution is
+\[
+x = B^{-1}\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}= \begin{pmatrix} 1 & 1 & 1 \\ 1 &1 &0 \\ 1 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}=\boxed{\begin{pmatrix} 3 \\ 2 \\ 1 \end{pmatrix}}
+\]
+
+\item[(c)]
+\[
+(2BA)^{-1}=\frac{1}{2}A^{-1}B^{-1}=\boxed{\frac{1}{2}
+\begin{pmatrix} 0 & 1 & 1 \\ -2 &-2 &-1 \\ 0 & 1 & 0 \end{pmatrix}}
+\]
+
+\item[(d)] Recall that multiplication on the left by a matrix is not the same as multiplication on the right. We have that
+\begin{align*}
+ACB=-3I_3\implies&\;\;  A^{-1}ACB=-3A^{-1}I_3 &&\text{multiplying on the left by $A^{-1}$}\\
+\implies & \;\; CB=-3A^{-1}\\
+\implies & CBB^{-1}=-3A^{-1}B^{-1}&&\text{multiplying on the right by $B^{-1}$}\\
+\implies & C=-3A^{-1}B^{-1}\\
+\implies & C=\boxed{-3\begin{pmatrix} 0 & 1 & 1 \\ -2 &-2 &-1 \\ 0 & 1 & 0 \end{pmatrix}}
+\end{align*}
+\end{enumerate}
+
+
+\section*{3.8: exercise 4} 
+\addcontentsline{toc}{section}{3.8: exercise 4} 
+Let $A$ be a $2\times 2$ matrix having integer entries.  Find a
+condition on the entries of $A$ that guarantees that $A\inv$ has
+integer entries.
+
+
+
+\sol
+
+\begin{enumerate}
+\item[(4)]
+
+The formula for the inverse of a 2x2 matrix, $A^{-1}$, involves a term $\frac{1}{ad-bc}$, where $a$, $b$, $c$, and $d$ are the elements of the matrix $A$. For this inverse to have integer entries (whole numbers), this term needs to be an integer itself.
+
+Since $a$, $b$, $c$, and $d$ are all integers, the only way for $\frac{1}{ad-bc}$ to be an integer is if the absolute value of the expression \boxed{|ad-bc|=1} . In simpler terms, the product of the diagonal elements ($a$ and $d$) minus the product of the off-diagonal elements ($b$ and $c$) must be either 1 or $-1$.
+
+
+\end{enumerate}
+
+
+
+\section*{3.8: exercise 6} 
+\addcontentsline{toc}{section}{3.8: exercise 6} 
+Suppose a $2\times 2$ matrix $A$ satisfies the following equation:
+\begin{equation}
+\mathbf{A} \begin{pmatrix} 0 & 2 \\ 1 & 2 \end{pmatrix} = \begin{pmatrix} -1 & 2 \\ 1 & 4 \end{pmatrix}
+\end{equation}
+
+Without calculating the entries of $\mathbf{A}$, find $\det(\mathbf{A})$.
+
+
+\sol
+
+\begin{enumerate}
+\item[(6)]
+\begin{align*}
+\det \left(A \begin{pmatrix} 0 & 2 \\ 1 & 2 \end{pmatrix} \right) &= \det(A) \det \begin{pmatrix} 0 & 2 \\ 1 & 2 \end{pmatrix} \\
+&= -2 \det(A) \\
+&= \det \begin{pmatrix} -1 & 2 \\ 1 & 4 \end{pmatrix} \\
+&= -6.
+\end{align*}
+
+Therefore, $\boxed{\det(A) = 3}$.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
