@@ -1,0 +1,509 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
+
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#8}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#8}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {04/14/2024}}
+
+\begin{document}
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+
+
+
+
+\section*{8.2: exercise 1} 
+\addcontentsline{toc}{section}{8.2: exercise 1} 
+
+The $3\times 3$ matrix
+\[
+A = \left(\begin{array}{ccc}
+1 & 2 & 5 \\
+2 & -1 & 1 \\
+3 & 1 & 6
+\end{array}\right)
+\]
+has rank two. Let $r_1, r_2, r_3$ be the rows of $A$ and
+$c_1, c_2, c_3$ be the columns of $A$. Find all scalars $\alpha_1, \alpha_2, \alpha_3$ and
+$\beta_1, \beta_2, \beta_3$ such that
+\[
+\begin{aligned}
+\alpha_1 r_1 + \alpha_2 r_2 + \alpha_3 r_3 & = 0, \\
+\beta_1 c_1 + \beta_2 c_2 + \beta_3 c_3 & = 0.
+\end{aligned}
+\]
+
+\sol
+We are given the $3 \times 3$ matrix
+\[
+A = \left(\begin{array}{ccc}
+1 & 2 & 5 \\
+2 & -1 & 1 \\
+3 & 1 & 6
+\end{array}\right),
+\]
+and we know that it has rank two. This implies that there is a linear dependence among its rows $r_1, r_2, r_3$ and columns $c_1, c_2, c_3$. We need to find the scalars $\alpha_1, \alpha_2, \alpha_3$ and $\beta_1, \beta_2, \beta_3$ such that the following equations are satisfied:
+\[
+\alpha_1 r_1 + \alpha_2 r_2 + \alpha_3 r_3 = 0 \quad \text{and} \quad \beta_1 c_1 + \beta_2 c_2 + \beta_3 c_3 = 0.
+\]
+
+
+First, we find a nontrivial solution for $\alpha$. For the rows of $A$, we form the equation
+\[
+\begin{bmatrix}
+1 & 2 & 5 \\
+2 & -1 & 1 \\
+3 & 1 & 6
+\end{bmatrix}
+\begin{bmatrix}
+\alpha_1 \\
+\alpha_2 \\
+\alpha_3
+\end{bmatrix} = 0.
+\]
+By row reducing $A$, we find that the rows are linearly dependent, specifically the relation $-r_1 - r_2 + r_3 = 0$ holds. Thus, setting $\alpha_3 = 1$ yields $\alpha_1 = -1$ and $\alpha_2 = -1$. Therefore, the possible choice for $\alpha$ is 
+\[
+\alpha = (\alpha_1, \alpha_2, \alpha_3) = \alpha_3(-1, -1, 1).
+\]
+
+
+Similarly, for the columns of $A$, we solve
+\[
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & -1 & 1 \\
+5 & 1 & 6
+\end{bmatrix}
+\begin{bmatrix}
+\beta_1 \\
+\beta_2 \\
+\beta_3
+\end{bmatrix} = 0.
+\]
+Upon row reduction, it is found that the columns follow the relation $-7c_1 - 9c_2 + 5c_3 = 0$. Assigning $\beta_3 = 1$, we determine $\beta_1 = -\frac{7}{5}$ and $\beta_2 = -\frac{9}{5}$. Hence, the scalars for $\beta$ are
+\[
+\beta = (\beta_1, \beta_2, \beta_3) = \beta_3\left(-\frac{7}{5}, -\frac{9}{5}, 1\right).
+\]
+
+
+
+
+\section*{8.2: exercise 6} 
+\addcontentsline{toc}{section}{8.2: exercise 6}
+
+Let $B$ be an $m \times p$ matrix and let $C$ be a $p \times n$ matrix. Consider the $m \times n$ matrix $A = BC$. We are asked to prove the following inequality for the rank of matrix $A$:
+\[
+\rank(A) \leq \min\{\rank(B),\;\rank(C)\}.
+\]
+
+\sol
+
+We aim to prove that $\rank(A) \leq \min\{\rank(B),\rank(C)\}$ for matrices $B$ of size $m \times p$ and $C$ of size $p \times n$, where $A = BC$. 
+
+
+Consider the matrix $A = BC$. We observe that the columns of $A$ are formed as linear combinations of the columns of $B$. Consequently, the column space of $A$ cannot span more than the column space of $B$. Therefore, $\rank(A) \leq \rank(B)$.
+
+Next, we examine the transpose of $A$, denoted as $A^t$. By the properties of matrix transposition, $A^t = C^tB^t$. Similar to the previous argument, the columns of $A^t$ are linear combinations of the columns of $C^t$, implying that the column space of $A^t$ cannot exceed the column space of $C^t$. Thus, $\rank(A^t) \leq \rank(C^t)$.
+
+Since the rank of a matrix remains unchanged under transposition ($\rank(A) = \rank(A^t)$), we conclude that $\rank(A) \leq \min\{\rank(B),\rank(C)\}$.
+
+
+\section*{8.2: exercise 8} 
+\addcontentsline{toc}{section}{8.2: exercise 8}
+
+Consider the $3 \times 3$ matrix
+\[
+C=\begin{bmatrix} 
+1 & 1 & 1 \\ 
+-1 & b  &  -1 \\ 
+2 & 2 & b^2+1 
+\end{bmatrix}.
+\]
+We need to determine the values of $b$ for which the following conditions are satisfied:
+
+Dimensions of the Range of $C$
+\begin{enumerate}
+    \item Find all $b$ such that $\dim(\text{range}(C))=3$.
+    \item Find all $b$ such that $\dim(\text{range}(C))=2$.
+    \item Find all $b$ such that $\dim(\text{range}(C))=1$.
+    \item Find all $b$ such that $\dim(\text{range}(C))=0$.
+\end{enumerate}
+
+Dimensions of the Null Space of $C$
+\begin{enumerate}
+    \item Find all $b$ such that $\dim(\text{null space}(C))=3$.
+    \item Find all $b$ such that $\dim(\text{null space}(C))=2$.
+    \item Find all $b$ such that $\dim(\text{null space}(C))=1$.
+    \item Find all $b$ such that $\dim(\text{null space}(C))=0$.
+\end{enumerate}
+
+Consistency of a Linear System
+Determine all $b$ for which the equation
+\begin{equation}
+Cx=\begin{bmatrix} 1 \\ 1 \\2 \end{bmatrix}
+\end{equation}
+is consistent. \textbf{Hint:} Can you convert this into a statement about the range of $C$?\\
+
+
+\sol
+
+Consider the $3 \times 3$ matrix
+\[
+C=\begin{bmatrix} 
+1 & 1 & 1 \\ 
+-1 & b  &  -1 \\ 
+2 & 2 & b^2+1 
+\end{bmatrix}.
+\]
+
+
+\begin{enumerate}
+    \item \textbf{Rank of Matrix $C$:} The dimension of the range of $C$, which is equivalent to the column rank of $C$, equals the row rank of $C$. By applying row reduction techniques to $C$, we find:
+    \begin{itemize}
+        \item The rank of $C$ is $3$ when $b^2 \neq 1$, as all rows are linearly independent in this case.
+        \item The rank of $C$ decreases to $2$ when $b = 1$, indicating one linear dependence among the rows.
+        \item The rank of $C$ further reduces to $1$ when $b = -1$, indicating significant linear dependencies among the rows.
+    \end{itemize}
+    
+    \item \textbf{Null Space of $C$:} The dimension of the null space of $C$ is computed as $3 - \text{rank}(C)$. Thus, it varies inversely with the rank of $C$.
+
+\item \textbf{Consistency of a Specific Equation:}
+    Equation \eqref{A8.2.1a} is given by
+    \[
+    Cx = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}.
+    \]
+    This equation has a solution if and only if $\begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}$ is within the range of $C$. The equation is always consistent when $\text{rank}(C) = 3$ (i.e., when $b^2 \neq 1$). Further analysis through row reduction shows:
+    \begin{itemize}
+        \item The equation is consistent when $b = 1$, as the vector is within the span of the columns of $C$.
+        \item The equation is inconsistent when $b = -1$, as the vector lies outside the reduced column span.
+    \end{itemize}
+\end{enumerate}
+
+\section*{8.3: exercise 5} 
+\addcontentsline{toc}{section}{8.3: exercise 5}
+
+Suppose the mapping $L:\mathbb{R}^3 \to \mathbb{R}^2$ is linear and satisfies the following conditions:
+\[
+L\left(\begin{array}{c}
+1 \\
+0 \\
+0
+\end{array}\right) = \left(\begin{array}{c}
+1 \\
+2
+\end{array}\right), \quad
+L\left(\begin{array}{c}
+0 \\
+1 \\
+1
+\end{array}\right) = \left(\begin{array}{c}
+2 \\
+0
+\end{array}\right), \quad
+L\left(\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}\right) = \left(\begin{array}{r}
+-1 \\
+4
+\end{array}\right).
+\]
+Determine the $2 \times 3$ matrix $A$ such that $L = L_A$, where $L_A$ represents the linear transformation associated with matrix $A$.\\
+
+
+\sol
+
+Given the linear transformation $L: \mathbb{R}^3 \to \mathbb{R}^2$, we aim to determine the matrix representation $A$ such that $L = L_A$. The transformation properties provided are:
+\[
+L\left(\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right) = \left(\begin{array}{c} 1 \\ 2 \end{array}\right) \quad \text{and} \quad L\left(\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right) = \left(\begin{array}{r} -1 \\ 4 \end{array}\right).
+\]
+
+Using linearity and the information given:
+\begin{itemize}
+    \item The first column of matrix $A$ corresponds to $L(1,0,0)$, giving us the first column of $A$ as $\left(\begin{array}{c} 1 \\ 2 \end{array}\right)$.
+    \item The third column of matrix $A$ corresponds to $L(0,0,1)$, giving us the third column of $A$ as $\left(\begin{array}{r} -1 \\ 4 \end{array}\right)$.
+\end{itemize}
+
+Furthermore, the transformation of the standard basis vector $(0,1,0)$ can be derived by considering that $(0,1,0) = (0,1,1) - (0,0,1)$. Applying linearity of $L$, we compute:
+\[
+L \left(\begin{array}{c} 0 \\ 1\\ 0 \end{array}\right) = L\left(\begin{array}{c} 0 \\ 1\\ 1 \end{array}\right) - L\left(\begin{array}{r} 0 \\ 0 \\ 1 \end{array}\right) = \left(\begin{array}{c} 2 \\ 0 \end{array}\right) - \left(\begin{array}{r} -1 \\ 4 \end{array}\right) = \left(\begin{array}{r} 3 \\ -4 \end{array}\right).
+\]
+
+This calculation results in the second column of $A$ being $\left(\begin{array}{r} 3 \\ -4 \end{array}\right)$. Consequently, the complete matrix representation of $L$ is:
+\[
+A = \begin{bmatrix} 1 & 3 & -1 \\ 2 & -4 & 4 \end{bmatrix}.
+\]
+
+
+
+
+
+\section*{8.3: exercise 9} 
+\addcontentsline{toc}{section}{8.3: exercise 9}
+
+Given the matrix
+\[
+A = \begin{pmatrix}
+-10 & -6 \\
+18 & 11
+\end{pmatrix},
+\]
+determine a basis \(\mathcal{W} = \{w_1, w_2\}\) such that the matrix representation \([L_A]_{\mathcal{W}}\) of the linear map \(L_A\), associated with matrix \(A\), is a diagonal matrix.
+
+
+\sol
+
+The matrix representation $[L]_{\cal W}$ of the linear transformation $L$ associated with matrix $A$ is diagonal in the basis:
+\[
+{\cal W} = \left\{\begin{pmatrix} -1 \\ 2 \end{pmatrix}, \begin{pmatrix} 2 \\ -3 \end{pmatrix}\right\}.
+\]
+
+The matrix $[L]_{\cal W}$ can be made diagonal if the basis ${\cal W}$ consists of eigenvectors of $L$ corresponding to real eigenvalues. To verify this, we compute the eigenvalues and eigenvectors of $L$:
+
+\begin{itemize}
+    \item \textbf{Finding Eigenvalues:} By solving the characteristic polynomial of $A$, which is given by
+    \[
+    \det(A - \lambda I) = \det\begin{pmatrix}
+    -10 - \lambda & -6 \\
+    18 & 11 - \lambda
+    \end{pmatrix},
+    \]
+    we find the eigenvalues \(\lambda_1 = 2\) and \(\lambda_2 = -1\).
+    
+    \item \textbf{Finding Eigenvectors:}
+    \begin{enumerate}
+        \item For \(\lambda_1 = 2\), solve \( (A - 2I)v = 0 \):
+        \[
+        \begin{pmatrix}
+        -12 & -6 \\
+        18 & 9
+        \end{pmatrix}
+        \begin{pmatrix}
+        x \\
+        y
+        \end{pmatrix} = 0.
+        \]
+        This yields the eigenvector \( w_1 = (-1, 2)^t \).
+        
+        \item For \(\lambda_2 = -1\), solve \( (A + I)v = 0 \):
+        \[
+        \begin{pmatrix}
+        -9 & -6 \\
+        18 & 12
+        \end{pmatrix}
+        \begin{pmatrix}
+        x \\
+        y
+        \end{pmatrix} = 0.
+        \]
+        This yields the eigenvector \( w_2 = (2, -3)^t \).
+    \end{enumerate}
+\end{itemize}
+
+Thus, the eigenvectors $w_1$ and $w_2$ correspond to the eigenvalues 2 and -1, respectively, and form the basis ${\cal W}$ in which $[L]_{\cal W}$ is diagonal.\\
+
+
+
+
+\section*{9.1: exercise 3} 
+\addcontentsline{toc}{section}{9.1: exercise 3}
+
+Determine the point on the line \( y = x \) in \(\mathbb{R}^2\) that has the minimal distance to the point \((1, 6)\). \\
+
+
+\sol
+
+
+The line \( y = x \) represents a one-dimensional subspace of \(\mathbb{R}^2\) and can be described by the basis vector \((1, 1)\). To find the point on this line that minimizes the distance to \((1, 6)\), we utilize the projection formula, which states:
+
+\[
+\text{Projection of } \mathbf{u} \text{ onto } \mathbf{v} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2} \mathbf{v},
+\]
+where \(\mathbf{u}\) is the vector from the origin to \((1, 6)\) and \(\mathbf{v}\) is the basis vector \((1, 1)\).
+
+Applying this formula, we compute the dot product and the norm squared of the basis vector:
+\[
+(1, 1) \cdot (1, 6) = 1 + 6 = 7, \quad \text{and} \quad \|(1, 1)\|^2 = 1^2 + 1^2 = 2.
+\]
+
+Thus, the projection of \((1, 6)\) onto the line \(y = x\) is given by:
+\[
+\frac{7}{2}(1, 1) = \left(\frac{7}{2}, \frac{7}{2}\right).
+\]
+
+Therefore, the point \(\left(\frac{7}{2}, \frac{7}{2}\right)\) on the line \(y = x\) is the point that realizes the minimal distance to \((1, 6)\).\\
+
+
+
+\section*{9.1: exercise 4} 
+\addcontentsline{toc}{section}{9.1: exercise 4}
+
+Determine the vector in the plane defined by the equation \( x - \frac{1}{2} y - \frac{1}{3} z = 0 \) in \(\mathbb{R}^3\) that has the minimal distance to the point \( \mathbf{x}_0 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \).
+
+
+\sol
+
+
+
+To solve this problem, we first choose basis vectors for the plane. We select:
+\[
+w_1 = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix} \quad \text{and} \quad w_2 = \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix}.
+\]
+
+
+The vector \( w \) in the plane that realizes the minimal distance can be expressed as a linear combination of the basis vectors:
+\[
+w = \alpha_1 w_1 + \alpha_2 w_2.
+\]
+
+
+To find the coefficients \( \alpha_1 \) and \( \alpha_2 \), we define the matrix \( A \) with columns as the basis vectors:
+\[
+A = \begin{pmatrix} 1 & 1 \\ 2 & 0 \\ 0 & 3 \end{pmatrix}.
+\]
+Using \( A \), we compute:
+\[
+A^tA = \begin{pmatrix} 1 & 2 & 0 \\ 1 & 0 & 3 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 2 & 0 \\ 0 & 3 \end{pmatrix} = \begin{pmatrix} 5 & 1 \\ 1 & 10 \end{pmatrix}.
+\]
+
+
+Applying the formula for the inverse of a \( 2 \times 2 \) matrix:
+\[
+(A^tA)^{-1} = \begin{pmatrix} 5 & 1 \\ 1 & 10 \end{pmatrix}^{-1} = \frac{1}{5 \times 10 - 1 \times 1} \begin{pmatrix} 10 & -1 \\ -1 & 5 \end{pmatrix} = \frac{1}{49} \begin{pmatrix} 10 & -1 \\ -1 & 5 \end{pmatrix}.
+\]
+
+
+Next, we calculate the product \( A^t x_0 \):
+\[
+A^t x_0 = \begin{pmatrix} 1 & 2 & 0 \\ 1 & 0 & 3 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}.
+\]
+Thus, the coefficients are:
+\[
+\begin{pmatrix} \alpha_1 \\ \alpha_2 \end{pmatrix} = \frac{1}{49} \begin{pmatrix} 10 & -1 \\ -1 & 5 \end{pmatrix} \begin{pmatrix} 3 \\ 4 \end{pmatrix} = \frac{1}{49} \begin{pmatrix} 26 \\ 17 \end{pmatrix} = \begin{pmatrix} 26/49 \\ 17/49 \end{pmatrix}.
+\]
+
+Finally, the vector \( w \) in the plane that is closest to \( \mathbf{x}_0 \) is given by:
+\[
+w = \frac{26}{49} w_1 + \frac{17}{49} w_2 = \frac{26}{49} \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix} + \frac{17}{49} \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix} = \frac{1}{49} \begin{pmatrix} 43 \\ 52 \\ 51 \end{pmatrix}.
+\]\\
+
+
+\section*{9.1: exercise 5} 
+\addcontentsline{toc}{section}{9.1: exercise 5}
+
+Prove that the least squares approximation is unique. Specifically, let \( W \) be a subspace of \( \mathbb{R}^n \) and let \( b \) be a vector in \( \mathbb{R}^n \) outside \( W \). Suppose \( w_1, w_2 \in W \) are two vectors such that the distance \( \|w_1 - b\| = \|w_2 - b\| \) is minimal among all vectors in \( W \). Then demonstrate that \( w_1 = w_2 \).
+
+
+\sol
+
+To demonstrate the uniqueness of the least squares approximation, consider the following argument:
+
+
+Assume \( w_1 \) provides the minimal distance to \( b \). By the orthogonality principle, the difference \( w_1 - b \) must be orthogonal to every vector in \( W \). Since \( w_2 - w_1 \) is a vector in \( W \) (being the difference of two vectors in the subspace), it follows that \( w_1 - b \) is also orthogonal to \( w_2 - w_1 \).
+
+
+Given the orthogonality of \( w_1 - b \) and \( w_2 - w_1 \), we apply the Pythagorean theorem, which states:
+\[
+\|w_1 - b\|^2 + \|w_2 - w_1\|^2 = \|(w_1 - b) + (w_2 - w_1)\|^2 = \|w_2 - b\|^2.
+\]
+Since \( \|w_1 - b\| = \|w_2 - b\| \) by assumption, the equation simplifies to:
+\[
+\|w_1 - b\|^2 + \|w_2 - w_1\|^2 = \|w_1 - b\|^2.
+\]
+
+
+This implies that \( \|w_2 - w_1\|^2 = 0 \), leading to the conclusion that \( w_2 - w_1 = 0 \). Therefore, \( w_1 = w_2 \), establishing the uniqueness of the least squares approximation. \\
+
+
+
+\section*{9.1: exercise 13} 
+\addcontentsline{toc}{section}{9.1: exercise 13}
+
+Consider the following system of linear equations:
+\[
+\begin{array}{rcc}
+x_1 + x_2 &=& 0, \\
+2x_1 - 3x_2 &=& 1, \\
+5x_1 - 2x_2 &=& 2.
+\end{array}
+\]
+Verify that the system of linear equations is inconsistent. Then find the least squares approximation solution of the system.
+
+
+\sol
+
+
+First, perform elementary row reduction on the augmented matrix of the system:
+\[
+\left(
+\begin{array}{cc|c}
+1 & 1 & 0 \\
+2 & -3 & 1 \\
+5 & -2 & 2 \\
+\end{array}
+\right) \to \left(
+\begin{array}{cc|c}
+1 & 1 & 0 \\
+0 & -5 & 1 \\
+0 & -7 & 2 \\
+\end{array}
+\right).
+\]
+This row reduction process reveals that the equations yield inconsistent results, confirming the system's inconsistency.
+
+Since the system is inconsistent, we proceed with the least squares approximation. Consider the coefficient matrix $A$:
+\[
+A = \begin{pmatrix} 1 & 1 \\ 2 & -3 \\ 5 & -2 \end{pmatrix}.
+\]
+The matrix $A$ has linearly independent columns, thus we use $A$ itself as $\mathbf{W}$. Let $b = \begin{pmatrix} 0 \\ 1 \\ 2 \end{pmatrix}$ represent the constants from the system.
+
+The least squares solution $\tilde{x}$ is given by:
+\[
+\tilde{x} = (\mathbf{W}^t\mathbf{W})^{-1}\mathbf{W}^tb.
+\]
+Calculating $\mathbf{W}^t\mathbf{W}$:
+\[
+\mathbf{W}^t\mathbf{W} = \begin{pmatrix} 1 & 2 & 5 \\ 1 & -3 & -2 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 2 & -3 \\ 5 & -2 \end{pmatrix} = \begin{pmatrix} 30 & -15 \\ -15 & 14 \end{pmatrix}.
+\]
+The inverse of $\mathbf{W}^t\mathbf{W}$:
+\[
+(\mathbf{W}^t\mathbf{W})^{-1} = \frac{1}{30 \times 14 - (-15) \times (-15)} \begin{pmatrix} 14 & 15 \\ 15 & 30 \end{pmatrix} = \frac{1}{195} \begin{pmatrix} 14 & 15 \\ 15 & 30 \end{pmatrix}.
+\]
+Then, compute $\mathbf{W}^tb$:
+\[
+\mathbf{W}^tb = \begin{pmatrix} 1 & 2 & 5 \\ 1 & -3 & -2 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 2 \end{pmatrix} = \begin{pmatrix} 12 \\ -7 \end{pmatrix}.
+\]
+Thus, the least squares solution is:
+\[
+\tilde{x} = \frac{1}{195} \begin{pmatrix} 14 & 15 \\ 15 & 30 \end{pmatrix} \begin{pmatrix} 12 \\ -7 \end{pmatrix} = \frac{1}{195} \begin{pmatrix} 63 \\ -30 \end{pmatrix}.
+\]
+The least squares approximation solution is $\tilde{x} = \frac{1}{195} \begin{pmatrix} 63 \\ -30 \end{pmatrix}$.
+
+
+
+
+\end{document}
