@@ -1,0 +1,294 @@
+\documentclass{report}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\usepackage{listings}
+\usepackage{hyperref}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\rhead{\thepage} 
+%\lhead{\hyperlink{https://www.sohumsuthar.com}{\underline{Sohum Suthar}}}
+
+\newcommand{\mylink}[2]{\underline{\href{#1}{#2}}}
+
+\lhead{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}
+
+\fancyhead[C]{MATH 2568 Homework \#9}
+
+\title{\Huge{MATH 2568}\\\huge{Dr. Krishnan}\\homework \#9}
+\author{\Huge{\mylink{https://www.sohumsuthar.com}{Sohum Suthar}}}
+\date{\huge {04/24/2024}}
+
+\begin{document}
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}	
+\tableofcontents
+\pagebreak
+
+
+
+
+
+\section*{10.1: exercise 1} 
+\addcontentsline{toc}{section}{10.1: exercise 1} 
+
+Find an orthonormal basis for the solutions to the linear equation
+\[
+2x_1 - x_2 + x_3 = 0.
+\]
+
+
+\sol
+
+An orthonormal basis is a set of vectors that are orthogonal to each other, and each of unit length. 
+
+To solve this, we first find any vector that satisfies the equation. Consider the vector $(1,1,-1)$. We can check that this vector is indeed a solution:
+\[
+2(1) - (1) + (-1) = 2 - 1 - 1 = 0.
+\]
+Thus, $(1,1,-1)$ is a solution. Next, we normalize this vector to obtain a unit vector. The length of $(1,1,-1)$ is calculated as
+\[
+\sqrt{1^2 + 1^2 + (-1)^2} = \sqrt{3}.
+\]
+Dividing each component of $(1,1,-1)$ by $\sqrt{3}$ gives the unit vector 
+\[
+w_1 = \frac{1}{\sqrt{3}}(1,1,-1).
+\]
+
+Next, we need to find another vector that is orthogonal to $w_1$ and also a solution to the equation. By inspection or systematic search, we consider the vector $(0,1,1)$. This vector also satisfies the given linear equation:
+\[
+2(0) - (1) + (1) = 0 - 1 + 1 = 0.
+\]
+To verify orthogonality with $w_1$, we compute the dot product:
+\[
+w_1 \cdot (0,1,1) = \frac{1}{\sqrt{3}}(1 \cdot 0 + 1 \cdot 1 + (-1) \cdot 1) = \frac{1}{\sqrt{3}}(0 + 1 - 1) = 0.
+\]
+Since the dot product is zero, $(0,1,1)$ is orthogonal to $w_1$. Normalizing this vector gives
+\[
+|| (0,1,1) || = \sqrt{0^2 + 1^2 + 1^2} = \sqrt{2},
+\]
+and thus
+\[
+w_2 = \frac{1}{\sqrt{2}}(0,1,1).
+\]
+
+
+
+\section*{10.1: exercise 10} 
+\addcontentsline{toc}{section}{10.1: exercise 10}
+
+Prove that the rows of an $n \times n$ orthogonal matrix form an orthonormal basis for $\mathbb{R}^n$. \\
+
+
+\sol
+Consider an $n \times n$ orthogonal matrix, denoted by $A$. By definition, an orthogonal matrix has the property that its columns form an orthonormal basis for $\mathbb{R}^n$. Our goal is to prove that the rows of $A$ also constitute an orthonormal basis for $\mathbb{R}^n$.
+
+According to properties of orthogonal matrices, the transpose of $A$, denoted as $A^T$, is equal to its inverse, $A^{-1}$. This is a key property of orthogonal matrices and can be stated as:
+\[
+A^T = A^{-1}.
+\]
+Using this property, we can demonstrate that multiplying $A$ by its transpose results in the identity matrix:
+\[
+I_n = AA^{-1} = AA^T = (A^T)^T(A^T).
+\]
+The equality $AA^T = I_n$ confirms that $A^T$ itself is an orthogonal matrix because the product of an orthogonal matrix and its transpose results in the identity matrix. This implies that the columns of $A^T$ must be orthonormal.
+
+Since the columns of $A^T$ are indeed the rows of $A$, this concludes that the rows of $A$ form an orthonormal basis for $\mathbb{R}^n$, just as the columns do. Therefore, the rows of an orthogonal matrix $A$ are confirmed to be an orthonormal basis for $\mathbb{R}^n$, completing the proof.
+
+
+\section*{10.1: exercise 11} 
+\addcontentsline{toc}{section}{10.1: exercise 11}
+
+Show that if \(P\) and \(Q\) are \(n \times n\) orthogonal matrices, then \(PQ\) is an \(n \times n\) orthogonal matrix.\\
+
+
+\sol
+
+
+To prove that the product of two \(n \times n\) orthogonal matrices \(P\) and \(Q\) is also an orthogonal matrix, we start by recalling the definition of an orthogonal matrix. An \(n \times n\) matrix \(P\) is orthogonal if it satisfies the condition:
+\[
+P^T P = I_n,
+\]
+where \(P^T\) is the transpose of \(P\), and \(I_n\) is the \(n \times n\) identity matrix. This property implies that the transpose of the matrix is also its inverse, i.e., \(P^T = P^{-1}\).
+
+Applying this definition to the matrices \(P\) and \(Q\), which are both orthogonal, we proceed by examining the transpose of the product \(PQ\):
+\[
+(PQ)^T = Q^T P^T.
+\]
+Given that \(P\) and \(Q\) are orthogonal, we know from their definitions that \(P^T = P^{-1}\) and \(Q^T = Q^{-1}\). Substituting these into the equation, we get:
+\[
+(PQ)^T = Q^T P^T = Q^{-1} P^{-1}.
+\]
+The property of inverses for a product of two matrices states that the inverse of a product is the product of the inverses in reverse order. Therefore, the expression \(Q^{-1} P^{-1}\) can be rewritten as:
+\[
+Q^{-1} P^{-1} = (PQ)^{-1}.
+\]
+Thus, we have shown that:
+\[
+(PQ)^T = (PQ)^{-1}.
+\]
+This equality indicates that the product \(PQ\) satisfies the definition of an orthogonal matrix, because its transpose is equal to its inverse. Hence, \(PQ\) is indeed an orthogonal matrix, confirming our assertion.
+
+
+\section*{10.2: exercise 2} 
+\addcontentsline{toc}{section}{10.2: exercise 2}
+Find an orthonormal basis of the plane \( W \subset \mathbb{R}^3 \) spanned by the vectors \( w_1 = (1, 2, 3) \) and \( w_2 = (2, 5, -1) \) by applying the Gram-Schmidt orthonormalization process.\\
+
+\sol
+
+Apply the Gram-Schmidt process to these vectors.
+
+First, we compute the norm of \( w_1 \):
+\[
+||w_1|| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}.
+\]
+We then normalize \( w_1 \) to find \( v_1 \):
+\[
+v_1 = \frac{1}{||w_1||}w_1 = \frac{1}{\sqrt{14}}(1,2,3).
+\]
+
+Next, we need to orthogonalize \( w_2 \) with respect to \( v_1 \). We start by calculating the dot product of \( w_2 \) with \( v_1 \):
+\[
+w_2 \cdot v_1 = 2 \cdot \frac{1}{\sqrt{14}} + 5 \cdot \frac{2}{\sqrt{14}} - 1 \cdot \frac{3}{\sqrt{14}} = \frac{9}{\sqrt{14}}.
+\]
+The projection of \( w_2 \) onto \( v_1 \) is:
+\[
+(w_2 \cdot v_1)v_1 = \frac{9}{\sqrt{14}} \cdot \frac{1}{\sqrt{14}}(1,2,3) = \frac{9}{14}(1,2,3).
+\]
+We subtract this projection from \( w_2 \) to get the vector orthogonal to \( v_1 \):
+\[
+v_2' = w_2 - (w_2 \cdot v_1)v_1 = (2,5,-1) - \frac{9}{14}(1,2,3) = \frac{1}{14}(19,52,-41).
+\]
+
+Finally, we normalize \( v_2' \) to obtain \( v_2 \):
+\[
+||v_2'|| = \sqrt{\left(\frac{19}{14}\right)^2 + \left(\frac{52}{14}\right)^2 + \left(\frac{-41}{14}\right)^2} = \frac{\sqrt{4746}}{14},
+\]
+and thus
+\[
+v_2 = \frac{1}{||v_2'||}v_2' = \frac{14}{\sqrt{4746}} \left(\frac{1}{14}(19,52,-41)\right) = \frac{1}{\sqrt{4746}}(19,52,-41).
+\]
+
+Thus, the vectors \( v_1 = \frac{1}{\sqrt{14}}(1,2,3) \) and \( v_2 = \frac{1}{\sqrt{4746}}(19,52,-41) \) form an orthonormal basis for \( W \).
+
+
+
+
+
+\section*{10.3: exercise 2} 
+\addcontentsline{toc}{section}{10.3: exercise 2}
+
+Let
+\[
+A = \begin{pmatrix} 1 & 2 \\ 2 & -2 \end{pmatrix}.
+\]
+Find the eigenvalues and eigenvectors of \(A\) and verify that the eigenvectors are orthogonal.\\
+
+
+\sol
+
+First, we calculate the eigenvalues of the matrix \(A\). The matrix \(A\) is given by:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 2 & -2 \end{pmatrix}.
+\]
+To find the eigenvalues, we solve the characteristic equation \(\det(A - \lambda I) = 0\), where \(I\) is the identity matrix and \(\lambda\) represents the eigenvalues. This leads to:
+\[
+\det \begin{pmatrix} 1 - \lambda & 2 \\ 2 & -2 - \lambda \end{pmatrix} = (1 - \lambda)(-2 - \lambda) - 2 \cdot 2 = \lambda^2 + \lambda - 6.
+\]
+Factoring this quadratic equation gives:
+\[
+\lambda^2 + \lambda - 6 = (\lambda - 2)(\lambda + 3) = 0,
+\]
+which implies that the eigenvalues are \(\lambda_1 = 2\) and \(\lambda_2 = -3\).
+
+Next, we find the eigenvectors corresponding to each eigenvalue:
+
+For \(\lambda_1 = 2\):
+\[
+(A - 2I) \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -1 & 2 \\ 2 & -4 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+\]
+solving which gives the eigenvector \(v_1 = (2, 1)\).
+
+For \(\lambda_2 = -3\):
+\[
+(A + 3I) \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 4 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+\]
+solving which gives the eigenvector \(v_2 = (1, -2)\).
+
+Finally, to verify that these eigenvectors are orthogonal, we calculate their dot product:
+\[
+v_1 \cdot v_2 = (2, 1) \cdot (1, -2) = 2 \times 1 + 1 \times (-2) = 2 - 2 = 0.
+\]
+Since the dot product is zero, the eigenvectors \(v_1\) and \(v_2\) are indeed orthogonal.
+
+
+
+
+\section*{10.3: exercise 4} 
+\addcontentsline{toc}{section}{10.3: exercise 4}
+
+Let \(\mathcal{S}_2\) be the set of real \(2 \times 2\) symmetric matrices.
+\begin{enumerate}[label=(\alph*)]
+\item Verify that \(\mathcal{S}_2\) is a vector space and that 
+\begin{equation} \label{e:sym_mat_base}
+E_1 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad E_2 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad E_3 = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+\end{equation}
+is a basis of \(\mathcal{S}_2\). Hence \(\mathcal{S}_2\) is 3-dimensional.
+\item Let \(P\) be a \(2 \times 2\) orthogonal matrix. Verify that the map \(M_P: \mathcal{S}_2 \to \mathcal{S}_2\) defined by 
+\[
+M_P(A) = P^TAP
+\]
+is linear.
+\item Let \(P\) be the matrix 
+\begin{equation} \label{e:reflection_matrix}
+P = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+\end{equation}
+Verify that \(P\) is an orthogonal matrix and compute the eigenvalues and eigenvectors of \(M_P\).
+\end{enumerate}
+
+
+\sol
+
+\begin{enumerate}[label=(\alph*)]
+\setcounter{enumi}{0}
+\item Symmetric matrices are closed under addition and scalar multiplication. Therefore, the set \(\mathcal{S}_2\) of real \(2 \times 2\) symmetric matrices is a vector space. Every matrix in \(\mathcal{S}_2\) can be expressed as:
+\[
+\begin{pmatrix} a & b \\ b & c \end{pmatrix} = aE_1 + bE_2 + cE_3.
+\]
+This expression shows that the vectors \(\mathcal{E} = \{E_1, E_2, E_3\}\) span \(\mathcal{S}_2\) and are linearly independent, thus forming a basis for \(\mathcal{S}_2\). Therefore, the dimension of \(\mathcal{S}_2\) is 3.
+
+\item To verify the linearity of the map \(M_P: \mathcal{S}_2 \to \mathcal{S}_2\) defined by \(M_P(A) = P^TAP\), we perform the following calculations:
+\begin{align*}
+M_P(A+B) &= P^T(A+B)P = P^TAP + P^TBP = M_P(A) + M_P(B), \\
+M_P(cA) &= P^T(cA)P = cP^TAP = cM_P(A),
+\end{align*}
+for all \(A, B \in \mathcal{S}_2\) and \(c \in \mathbb{R}\). These properties confirm the linearity of \(M_P\).
+
+\item To compute the matrix of \(M_P\) in the basis given in \eqref{e:sym_mat_base}, where \(P\) is a specific orthogonal matrix, we calculate:
+\begin{align*}
+M_P(E_1) &= P^T E_1 P = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = E_3, \\
+M_P(E_2) &= -E_2, \\
+M_P(E_3) &= E_1.
+\end{align*}
+Thus, the matrix of \(M_P\) in the basis \(\mathcal{E}\) is:
+\[
+\begin{pmatrix} 0 & 0 & 1 \\ 0 & -1 & 0 \\ 1 & 0 & 0 \end{pmatrix}.
+\]
+The characteristic polynomial of this matrix is calculated as:
+\[
+p(\lambda) = \det \left( \begin{pmatrix} -\lambda & 0 & 1 \\ 0 & -1-\lambda & 0 \\ 1 & 0 & -\lambda \end{pmatrix} \right) = (1 - \lambda^2)(1 + \lambda),
+\]
+giving eigenvalues \(-1, -1, 1\). The eigenvectors in \(\mathbb{R}^3\) corresponding to \(-1\) are \((1, 0, -1)^T\) and \((0, 1, 0)^T\), which correspond to the symmetric matrices \(E_1 - E_3\) and \(E_2\). The eigenvector for \(1\) is \((1, 0, 1)^T\) corresponding to the symmetric matrix \(E_1 + E_3\).
+\end{enumerate}
+
+
+
+
+
+\end{document}
